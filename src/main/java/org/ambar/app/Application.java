@@ -31,17 +31,19 @@ import org.springframework.core.annotation.Order;
 @Order(HIGHEST_PRECEDENCE)
 public class Application extends SpringBootServletInitializer {
 	
-//	@Override
-//    public void onStartup(ServletContext servletContext) throws ServletException {
-//		
-//        LightAdmin.configure(servletContext)
-//                .basePackage("org.lightadmin.boot.administration")
-//                .baseUrl("/admin")
-//                .security(false)
-//                .backToSiteUrl("http://lightadmin.org");
-// 
-//        super.onStartup(servletContext);
-//    }
+	/*
+	@Override
+    public void onStartup(ServletContext servletContext) throws ServletException {
+		
+        LightAdmin.configure(servletContext)
+                .basePackage("org.lightadmin.boot.administration")
+                .baseUrl("/admin")
+                .security(false)
+                .backToSiteUrl("http://lightadmin.org");
+ 
+        super.onStartup(servletContext);
+    }
+    */
 
 	/* Used for running in "embedded" mode */
     @Bean

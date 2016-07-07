@@ -34,7 +34,13 @@ public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
     response.setHeader("Access-Control-Max-Age", "3600");
     response.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
 
-    chain.doFilter(req, res);
+    if (request.getRequestURI().contains("/domain/")
+    		&& request.getRequestURI().endsWith("file.jpg")) {
+    	String newURI = request.getRequestURI().replace("file.jpg", "file.bin");
+    	request.getRequestDispatcher(newURI).forward(req, res);
+    } else {
+    	chain.doFilter(req, res);
+    }
 }
 
 @Override
